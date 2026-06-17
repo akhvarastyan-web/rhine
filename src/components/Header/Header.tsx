@@ -29,12 +29,12 @@ export const Header = () => {
       <nav className="navbar scrolled" id="navbar">
         <div className="container">
           <div className="nav-inner">
-            <a href="/hero" className="logo">
+            <Link to="/" className="logo">
               <div className="logo-mark">RM</div>
               <div className="logo-name">
                 Rhine <span>Media</span>
               </div>
-            </a>
+            </Link>
 
             <ul className="nav-links">
       {[

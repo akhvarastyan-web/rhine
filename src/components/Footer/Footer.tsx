@@ -8,12 +8,12 @@ export const Footer = () => {
       <div className="container">
         <div className="footer-cols">
           <div>
-            <a href="/" className="logo">
+            <Link to="/" className="logo">
               <div className="logo-mark">RM</div>
               <div className="logo-name">
                 Rhine <span>Media</span>
               </div>
-            </a>
+            </Link>
             <p className="fb-desc">
               Premium performance media buying for the world's most ambitious
               advertisers and affiliate partners. Built for scale. Optimised for

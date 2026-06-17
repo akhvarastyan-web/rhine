@@ -1,4 +1,5 @@
 import './CTA.css';
+import { Link } from 'react-router-dom';
 
 export const CTA = () => {
   return (
@@ -16,7 +17,7 @@ export const CTA = () => {
             deliver performance at scale, in every major GEO.
           </p>
           <div className="cta-btns">
-            <a href="contact.html" className="btn btn-primary">
+           <Link to="/extra" className="btn btn-primary">
               Start Cooperation
               <svg
                 width="13"
@@ -33,10 +34,10 @@ export const CTA = () => {
                   strokeLinejoin="round"
                 ></path>
               </svg>
-            </a>
-            <a href="contact.html" className="btn btn-gold-outline">
+            </Link>
+           <Link to="/extra" className="btn btn-gold-outline">
               Get in Touch
-            </a>
+            </Link>
           </div>
         </div>
       </div>
