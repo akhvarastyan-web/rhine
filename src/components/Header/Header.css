@@ -14,8 +14,6 @@
 
 
 
-
-
 .nav-inner {
     display: flex;
     align-items: center;
@@ -48,8 +46,17 @@ ul {
     font-size: 0.85rem;
     font-weight: 500;
     color: var(--t2);
-    transition: color var(--tf);
     letter-spacing: 0.01em;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.active-white {
+  color: white !important;
+}
+
+.active-gold {
+  color: var(--gold) !important;
 }
 
 .nav-right {

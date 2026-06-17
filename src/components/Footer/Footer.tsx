@@ -1,4 +1,6 @@
 import './Footer.css';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 export const Footer = () => {
   return (
@@ -6,7 +8,7 @@ export const Footer = () => {
       <div className="container">
         <div className="footer-cols">
           <div>
-            <a href="index.html" className="logo">
+            <a href="/" className="logo">
               <div className="logo-mark">RM</div>
               <div className="logo-name">
                 Rhine <span>Media</span>
@@ -37,67 +39,67 @@ export const Footer = () => {
             <h4 className="fc-head">Verticals</h4>
             <ul className="fc-links">
               <li>
-                <a href="#verticals">Dating Traffic</a>
+                <HashLink to="/#verticals">Dating Traffic</HashLink>
               </li>
-              <li>
-                <a href="#verticals">Nutra Campaigns</a>
-              </li>
-              <li>
-                <a href="#verticals">Gambling / iGaming</a>
-              </li>
-              <li>
-                <a href="#verticals">Sweepstakes</a>
-              </li>
-              <li>
-                <a href="#verticals">Crypto Offers</a>
-              </li>
-              <li>
-                <a href="#verticals">Adult</a>
-              </li>
+             <li>
+    <HashLink to="/#verticals">Nutra Campaigns</HashLink>
+  </li>
+  <li>
+    <HashLink to="/#verticals">Gambling / iGaming</HashLink>
+  </li>
+  <li>
+    <HashLink to="/#verticals">Sweepstakes</HashLink>
+  </li>
+  <li>
+    <HashLink to="/#verticals">Crypto Offers</HashLink>
+  </li>
+  <li>
+    <HashLink to="/#verticals">Adult</HashLink>
+  </li>
             </ul>
           </div>
 
           <div>
             <h4 className="fc-head">Traffic Sources</h4>
             <ul className="fc-links">
-              <li>
-                <a href="#traffic">Google Ads</a>
-              </li>
-              <li>
-                <a href="#traffic">Meta Ads</a>
-              </li>
-              <li>
-                <a href="#traffic">TikTok Ads</a>
-              </li>
-              <li>
-                <a href="#traffic">PropellerAds</a>
-              </li>
-              <li>
-                <a href="#traffic">Native Ads</a>
-              </li>
-              <li>
-                <a href="#traffic">Push &amp; Pop</a>
-              </li>
-            </ul>
+  <li>
+    <HashLink to="/#traffic">Google Ads</HashLink>
+  </li>
+  <li>
+    <HashLink to="/#traffic">Meta Ads</HashLink>
+  </li>
+  <li>
+    <HashLink to="/#traffic">TikTok Ads</HashLink>
+  </li>
+  <li>
+    <HashLink to="/#traffic">PropellerAds</HashLink>
+  </li>
+  <li>
+    <HashLink to="/#traffic">Native Ads</HashLink>
+  </li>
+  <li>
+    <HashLink to="/#traffic">Push &amp; Pop</HashLink>
+  </li>
+</ul>
           </div>
 
           <div>
             <h4 className="fc-head">Company</h4>
             <ul className="fc-links">
               <li>
-                <a href="#why-us">About Rhine Media</a>
+    <HashLink to="/#why-us">About Rhine Media</HashLink>
+  </li>
+  <li>
+    <Link to="/extra">Contact Us</Link>
+  </li>
+  <li>
+    <HashLink to="/#partners">Partners</HashLink>
+  </li>
+              <li>
+                <Link to="/terms">Terms of Service</Link>
               </li>
               <li>
-                <a href="contact.html">Contact Us</a>
-              </li>
-              <li>
-                <a href="#partners">Partners</a>
-              </li>
-              <li>
-                <a href="terms.html">Terms of Service</a>
-              </li>
-              <li>
-                <a href="privacy-policy.html">Privacy Policy</a>
+                <Link to="/privacy">Privacy Policy</Link>
               </li>
             </ul>
           </div>
@@ -109,9 +111,9 @@ export const Footer = () => {
             <span style={{ color: 'var(--t3)' }}>rhine-media.com</span>
           </p>
           <nav className="f-legal" aria-label="Legal">
-            <a href="terms.html">Terms</a>
-            <a href="privacy-policy.html">Privacy</a>
-            <a href="contact.html">Contact</a>
+            <Link to="/terms">Terms</Link>
+  <Link to="/privacy">Privacy</Link>
+  <Link to="/extra">Contact</Link>
           </nav>
         </div>
       </div>

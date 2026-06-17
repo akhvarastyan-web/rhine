@@ -96,8 +96,17 @@
     z-index: 1;
 }
 
+
+
 .map-stub-pin {
-    position: relative;
+  position: relative;
+    width: 32px;
+    height: 32px;
+    background: var(--gold-dim);
+    border: 1px solid var(--border-g);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    margin-bottom: 4px;
 }
 
 .map-stub-pin::after {

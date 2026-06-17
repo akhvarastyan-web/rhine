@@ -2,7 +2,7 @@ import './Hero.css';
 
 export const Hero = () => {
   return (
-    <section className="hero">
+    <section className="hero" id="hero">
       <div className="hero-grid"></div>
       <div className="orb orb-a" style={{ transform: 'translateY(0px)' }}></div>
       <div className="orb orb-b" style={{ transform: 'translateY(0px)' }}></div>

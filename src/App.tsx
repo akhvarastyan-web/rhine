@@ -10,35 +10,51 @@ import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
 import { Home } from './HomePage';
 import { ExtraPage } from './ExtraPage';
+import { Terms } from './components/Terms/Terms';
+import { Privacy } from './components/Privacy/Privacy';
+
+export const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 const AppContent = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const elements = document.querySelectorAll('[data-a]');
+  const elements = document.querySelectorAll('[data-a]');
 
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('vis');
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: '0px 0px -40px 0px',
-      },
-    );
+  // Спочатку прибираємо vis з усіх
+  elements.forEach(el => el.classList.remove('vis'));
 
-    elements.forEach(el => {
-      observer.observe(el);
-    });
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('vis');
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px',
+    },
+  );
 
-    return () => {
-      observer.disconnect();
-    };
-  }, [location]);
+  const timer = setTimeout(() => {
+    elements.forEach(el => observer.observe(el));
+  }, 50);
+
+  return () => {
+    clearTimeout(timer);
+    observer.disconnect();
+  };
+}, [location]);
 
   return (
     <>
@@ -46,6 +62,8 @@ const AppContent = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/extra" element={<ExtraPage />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy" element={<Privacy />} />
       </Routes>
       <Footer />
     </>
@@ -55,6 +73,7 @@ const AppContent = () => {
 export const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <AppContent />
     </Router>
   );

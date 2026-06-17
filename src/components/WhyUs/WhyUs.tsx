@@ -89,7 +89,7 @@ export const WhyUs = () => {
 
             <div className="fc">
               <div className="fc-ico">🌍</div>
-              <h4 clasNames="fc-title">Global GEO Coverage</h4>
+              <h4 className="fc-title">Global GEO Coverage</h4>
               <p className="fc-body">
                 Tier-1, LATAM, APAC and MENA — we have the infrastructure to
                 scale to any region instantly.

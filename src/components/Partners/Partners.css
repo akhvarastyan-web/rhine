@@ -30,8 +30,13 @@
     width: max-content;
 }
 
-roll animation {
-    transform: translateX(-18.4138%);
+@keyframes roll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
 }
 
 
@@ -64,4 +69,21 @@ roll animation {
     font-size: 0.845rem;
     font-weight: 600;
     color: var(--t2);
+}
+
+[data-a].vis {
+    opacity: 1;
+    transform: none;
+}
+
+@media (max-width: 768px) {
+    .src-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 540px) {
+    .src-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

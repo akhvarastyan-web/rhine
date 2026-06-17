@@ -38,6 +38,24 @@
     box-shadow: 0 22px 55px rgba(0, 0, 0, 0.32);
 }
 
+.v-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--g-gold);
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform var(--tm);
+    border-top-left-radius: var(--r-l);
+    border-top-right-radius: var(--r-l);
+}
+
+.v-card:hover::before {
+    transform: scaleX(1);
+}
 
 .v-emoji {
     font-size: 1.9rem;
@@ -71,21 +89,17 @@
     border-radius: 50px;
 }
 
-.v-card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: var(--g-gold);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform var(--tm);
-}
+
+
 
 @media (max-width: 540px) {
     .v-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 960px) {
+    .v-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

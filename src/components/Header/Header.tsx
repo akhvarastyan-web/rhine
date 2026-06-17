@@ -1,10 +1,12 @@
 import './Header.css';
 import { HashLink as Link } from 'react-router-hash-link';
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isClicked, setIsClicked] = useState(false);
+  const [activePath, setActivePath] = useState(window.location.hash || '/');
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,54 +22,58 @@ export const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+
+
   return (
     <>
       <nav className="navbar scrolled" id="navbar">
         <div className="container">
           <div className="nav-inner">
-            <Link to="/" class="logo">
+            <a href="/hero" className="logo">
               <div className="logo-mark">RM</div>
               <div className="logo-name">
                 Rhine <span>Media</span>
               </div>
-            </Link>
+            </a>
 
             <ul className="nav-links">
-              <li>
-                <Link smooth to="/#verticals">
-                  Verticals
-                </Link>
-              </li>
-              <li>
-                <Link smooth to="/#traffic">
-                  Traffic Sources
-                </Link>
-              </li>
-              <li>
-                <Link smooth to="/#partners">
-                  Partners
-                </Link>
-              </li>
-              <li>
-                <Link smooth to="/#why-us">
-                  Why Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/extra"
-                  style={{ color: isClicked ? 'var(--gold)' : 'inherit' }}
-                  onClick={() => setIsClicked(true)}
-                >
-                  Contact
-                </Link>
-              </li>
-            </ul>
+      {[
+        { path: '/#verticals', label: 'Verticals' },
+        { path: '/#traffic', label: 'Traffic Sources' },
+        { path: '/#partners', label: 'Partners' },
+        { path: '/#why-us', label: 'Why Us' },
+      ].map((item) => (
+        <li key={item.path}>
+          <Link
+            to={item.path}
+            className={activePath === item.path ? 'active-white' : ''}
+            onClick={() => setActivePath(item.path)}
+          >
+            {item.label}
+          </Link>
+        </li>
+      ))}
+      <li>
+        <Link
+          to="/extra"
+          className={activePath === '/extra' ? 'active-gold' : ''}
+          onClick={() => setActivePath('/extra')}
+        >
+          Contact
+        </Link>
+      </li>
+    </ul>
 
             <div className="nav-right">
-              <Link to="/extra" className="btn btn-ghost">
-                Get in Touch
-              </Link>
+              {location.pathname === '/extra' ? (
+    <Link to="/" className="btn btn-ghost">
+      Back to Home
+    </Link>
+  ) : (
+    <Link to="/extra" className="btn btn-ghost">
+      Get in Touch
+    </Link>
+  )}
               <Link to="/extra" className="btn btn-primary">
                 Start Cooperation
               </Link>
