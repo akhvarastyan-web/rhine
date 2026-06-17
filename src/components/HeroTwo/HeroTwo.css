@@ -4,6 +4,7 @@
     border-bottom: 1px solid var(--b0);
     position: relative;
     overflow: hidden;
+    margin-top: 5px;
 }
 
 .page-hero::before {
