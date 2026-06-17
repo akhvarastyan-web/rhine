@@ -1,4 +1,5 @@
 import './Hero.css';
+import { Link } from 'react-router-dom';
 
 export const Hero = () => {
   return (
@@ -81,7 +82,7 @@ export const Hero = () => {
           </p>
 
           <div className="hero-actions vis" data-a="up" data-d="3">
-            <a href="contact.html" className="btn btn-primary">
+            <Link to="/extra" className="btn btn-primary">
               Start Cooperation
               <svg
                 width="13"
@@ -98,10 +99,10 @@ export const Hero = () => {
                   strokeLinejoin="round"
                 ></path>
               </svg>
-            </a>
-            <a href="contact.html" className="btn btn-ghost">
+            </Link>
+            <Link to="/extra" className="btn btn-ghost">
               Get in Touch
-            </a>
+            </Link>
           </div>
 
           <div className="hero-kpis vis" data-a="up" data-d="4">
