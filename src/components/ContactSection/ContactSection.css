@@ -1,0 +1,189 @@
+.page-body {
+    padding: 80px 0;
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 64px;
+    align-items: start;
+}
+
+.contact-intro h3 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    font-family: var(--f-head);
+    margin-bottom: 14px;
+}
+
+
+.contact-intro p {
+    font-size: 0.93rem;
+    color: var(--t2);
+    line-height: 1.75;
+    margin-bottom: 40px;
+}
+
+.cinfo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-bottom: 40px;
+}
+
+.cinfo-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.cinfo-ico {
+    width: 42px;
+    height: 42px;
+    background: var(--bg-card);
+    border: 1px solid var(--b0);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.cinfo-text h4 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--t3);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-bottom: 4px;
+}
+
+.cinfo-text a, .cinfo-text p {
+    font-size: 0.92rem;
+    color: var(--t1);
+    transition: color var(--tf);
+}
+
+.map-stub-grid {
+    background: var(--bg-card);
+    border: 1px solid var(--b0);
+    border-radius: var(--r-l);
+    overflow: hidden;
+    margin-top: 36px;
+    position: relative;
+    height: 220px;
+}
+
+.map-stub-grid-inner {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(62, 114, 236, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(62, 114, 236, 0.05) 1px, transparent 1px);
+    background-size: 28px 28px;
+}
+
+
+.map-stub-label {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: var(--t3);
+    font-size: 0.83rem;
+    z-index: 1;
+}
+
+.map-stub-pin {
+    position: relative;
+}
+
+.map-stub-pin::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: var(--gold);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.form-card {
+    background: var(--bg-card);
+    border: 1px solid var(--b0);
+    border-radius: var(--r-xl);
+    padding: 44px 40px;
+}
+
+.form-card h3 {
+    font-family: var(--f-head);
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 28px;
+}
+
+.form-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.fg {
+    margin-bottom: 20px;
+}
+
+.fg label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--t2);
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+}
+
+.fg input,
+.fg select,
+.fg textarea {
+    width: 100%;
+    padding: 13px 15px;
+    background: var(--bg-2) !important;
+    border: 1px solid var(--b1);
+    border-radius: var(--r-s);
+    color: var(--t1);
+    font-family: var(--f-body);
+    font-size: 0.91rem;
+    transition: var(--tf);
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.fg select option {
+    background: var(--bg-2);
+    color: var(--t1);
+}
+
+.fg textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+.fg input[type="checkbox"] {
+    outline: 1px solid var(--b1);
+    transition: outline 0.3s ease;
+}
+
+
+.fg input[type="checkbox"]:focus {
+    outline: 2px solid var(--gold);
+}
+
+@media (max-width: 960px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+}
